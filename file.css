@@ -1,0 +1,78 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box; }
+
+body {
+  height: 100vh;
+  margin: 0;
+  line-height: 1.6;
+  font-family: Arial;
+  font-size: 10px;
+  font-weight: bold; }
+
+.card-container, .card, .card > .description, body {
+  display: flex; }
+
+.card, .description {
+  flex-direction: column; }
+
+.card-container {
+  position: relative;
+  margin: 0 auto;
+  flex-wrap: wrap; }
+
+.card {
+  align-items: center;
+  position: relative;
+  height: 400px;
+  padding: 15px;
+  border: 1px solid lightgray; }
+  .card {
+    margin: -.5px 0 0 -.5px; }
+  .card > img {
+    aspect-ratio: 2/3;
+    width: 150px; }
+  .card .description {
+    justify-content: space-around;
+    height: 100%;
+    width: 150px; }
+  .card .category {
+    font-weight: normal;
+    color: #e08d41;
+    order: -1; }
+  .card .title {
+    font-size: 1.2em; }
+  .card .rating::after {
+    content: " отзывов"; }
+  .card .price {
+    display: flex;
+    gap: 5px;
+    width: 150px; }
+    .card .price > .value {
+      font-size: 1.5em;
+      color: #ec494a; }
+      .card .price > .value.rub::after {
+        content: " ₽"; }
+      .card .price > .value.usd::before {
+        content: "$ "; }
+    .card .price > .old-value {
+      font-size: 1.1em;
+      text-decoration: line-through; }
+      .card .price > .old-value.rub::after {
+        content: " ₽"; }
+      .card .price > .old-value.usd::before {
+        content: "$ "; }
+  .card .sale {
+    position: absolute;
+    top: 220px;
+    left: 10px;
+    color: white;
+    background-color: #f64b4e;
+    border-radius: 3px;
+    padding: 2px 8px; }
+    .card .sale::before, .card .sale::after {
+      font-weight: normal; }
+    .card .sale::before {
+      content: "- "; }
+    .card .sale::after {
+      content: "%"; }
