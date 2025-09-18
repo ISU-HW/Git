@@ -1,0 +1,81 @@
+*
+	box-sizing: border-box
+
+body
+	height: 100vh
+	margin: 0
+	line-height: 1.6
+	font-family: Arial
+	font-size: 10px
+	font-weight: bold
+
+.card-container, .card, .card > .description, body
+	display: flex
+
+.card, .description
+	flex-direction: column
+
+.card-container
+	position: relative
+	margin: 0 auto
+	flex-wrap: wrap
+
+.card
+	align-items: center
+	position: relative
+	height: 400px
+	padding: 15px
+	border: 1px solid lightgray
+	&
+		margin: -.5px 0 0 -.5px
+	>	img
+		aspect-ratio: 2/3
+		width: 150px
+	
+	.description
+		justify-content: space-around
+		height: 100%
+		width: 150px
+	.category
+		font-weight: normal
+		color: #e08d41
+		order: -1
+	.title
+		font-size: 1.2em
+	.rating
+		&::after
+			content: " отзывов"
+	.price
+		>
+			.value
+				font-size: 1.5em
+				color: #ec494a
+				&.rub::after
+					content: " ₽"
+				&.usd::before
+					content: "$ "
+
+			.old-value
+				font-size: 1.1em
+				text-decoration: line-through
+				&.rub::after
+					content: " ₽"
+				&.usd::before
+					content: "$ "
+		display: flex
+		gap: 5px
+		width: 150px
+	.sale
+		position: absolute
+		top: 220px
+		left: 10px
+		color: white
+		background-color: #f64b4e
+		border-radius: 3px
+		padding: 2px 8px
+		&::before, &::after
+			font-weight: normal
+		&::before
+			content: "- "
+		&::after
+			content: "%"
